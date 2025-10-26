@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+actor "Клиент" as Customer
+actor "Оператор" as Operator
+actor "Админ" as Admin
+
+rectangle "Система" {
+  usecase "Поиск рейсов" as UC1
+  usecase "Бронирование" as UC2
+  usecase "Оплата" as UC3
+  usecase "Управление рейсами" as UC4
+  usecase "Администрирование" as UC5
+}
+
+Customer --> UC1
+Customer --> UC2
+Customer --> UC3
+Operator --> UC4
+Admin --> UC5
+Admin --> UC4
+@enduml
