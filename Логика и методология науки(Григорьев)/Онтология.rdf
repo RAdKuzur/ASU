@@ -1,0 +1,566 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2/"
+     xml:base="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-2="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#dependsOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#dependsOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="ru">зависит от</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasPart">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+        <rdfs:label xml:lang="ru">имеет часть</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasSubsystem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasSubsystem">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+        <rdfs:label xml:lang="ru">имеет подсистему</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#implements -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#implements">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Hardware"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+        <rdfs:label xml:lang="ru">реализует</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#interactsWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#interactsWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="ru">взаимодействует с</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#isManagedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#isManagedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Administrator"/>
+        <rdfs:label xml:lang="ru">управляется</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#isPartOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:label xml:lang="ru">является частью</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+        <rdfs:label xml:lang="ru">имеет подсистему</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#deploymentDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#deploymentDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="ru">дата внедрения</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasAvailabilityPercentage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasAvailabilityPercentage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="ru">процент доступности</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasResponseTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasResponseTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="ru">время отклика</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#hasVersion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="ru">версия</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#reliabilityLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#reliabilityLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="ru">уровень надежности</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#systemName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#systemName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="ru">название системы</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Administrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Administrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#BusinessProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#BusinessProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Process"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DevelopmentProcess"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#CRM_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#CRM_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#ClientDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#ClientDevice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Hardware"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Server"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#CorporateInformationSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#CorporateInformationSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DatabaseAdministrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DatabaseAdministrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Developer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Developer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DevelopmentProcess -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DevelopmentProcess">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#ERP_System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#ERP_System">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#FunctionalRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#FunctionalRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Hardware -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Hardware">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#MobileApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#MobileApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#NonFunctionalRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#NonFunctionalRequirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Performance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Performance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Process -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Process">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Reliability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Reliability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#FunctionalRequirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Security -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Security">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Server -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Server">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Hardware"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemAdministrator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemAdministrator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Thing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Thing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#WebApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#WebApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Financial_Module -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Financial_Module">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <untitled-ontology-2:systemName xml:lang="ru">Финансовый модуль</untitled-ontology-2:systemName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#IvanIvanov -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#IvanIvanov">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DatabaseAdministrator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#MariaPetrova -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#MariaPetrova">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemAdministrator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Oracle_Database -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Oracle_Database">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+        <untitled-ontology-2:hasVersion>19c</untitled-ontology-2:hasVersion>
+        <untitled-ontology-2:systemName>Oracle Database 19c</untitled-ontology-2:systemName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SAP_S4HANA -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SAP_S4HANA">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#ERP_System"/>
+        <untitled-ontology-2:deploymentDate rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2023</untitled-ontology-2:deploymentDate>
+        <untitled-ontology-2:hasAvailabilityPercentage rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">99.9</untitled-ontology-2:hasAvailabilityPercentage>
+        <untitled-ontology-2:hasResponseTime rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-2:hasResponseTime>
+        <untitled-ontology-2:reliabilityLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.999</untitled-ontology-2:reliabilityLevel>
+        <untitled-ontology-2:systemName>SAP S/4HANA</untitled-ontology-2:systemName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:comment>hing
+└── SystemComponent
+    ├── InformationSystem
+    │   ├── CorporateInformationSystem
+    │   ├── ERP_System
+    │   ├── CRM_System
+    │   ├── WebApplication
+    │   └── MobileApplication
+    ├── Software
+    │   ├── DatabaseManagementSystem
+    │   ├── Module
+    │   └── API
+    └── Hardware
+        ├── Server
+        └── ClientDevice
+
+Thing
+└── Actor
+    └── User
+        ├── EndUser
+        ├── Administrator
+        │   ├── SystemAdministrator
+        │   └── DatabaseAdministrator
+        └── Developer
+
+Thing
+└── Requirement
+    ├── FunctionalRequirement
+    └── NonFunctionalRequirement
+        ├── Security
+        ├── Reliability
+        └── Performance
+
+Thing
+└── Process
+    ├── DevelopmentProcess
+    └── BusinessProcess</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Actor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Hardware"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Process"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Requirement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemComponent"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Administrator"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#DatabaseAdministrator"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Developer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#SystemAdministrator"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#User"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#CRM_System"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#CorporateInformationSystem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#ERP_System"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#InformationSystem"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#MobileApplication"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#WebApplication"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#FunctionalRequirement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#NonFunctionalRequirement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Performance"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Reliability"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2025/9/untitled-ontology-2#Security"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
