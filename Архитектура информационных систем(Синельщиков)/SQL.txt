@@ -1,0 +1,480 @@
+-- Таблица типов мест
+CREATE TABLE seat_type (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL UNIQUE,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Таблица типов комнат
+CREATE TABLE room_type (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    description TEXT,
+    max_occupancy INTEGER DEFAULT 1 CHECK (max_occupancy > 0),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Таблица пользователей
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    icon_link VARCHAR(255),
+    email_verified_at TIMESTAMP NULL,
+    is_active BOOLEAN DEFAULT TRUE,
+    deleted_at TIMESTAMP NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT chk_email_format CHECK (email ~ '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$'),
+    CONSTRAINT chk_password_length CHECK (CHAR_LENGTH(password_hash) >= 60)
+);
+
+CREATE INDEX idx_user_activity ON users(is_active, email_verified_at);
+CREATE INDEX idx_user_deleted ON users(deleted_at);
+
+-- Функция для автоматического обновления updated_at
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+-- Таблица попыток входа
+CREATE TABLE login_attempts (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NULL,
+    email VARCHAR(100) NOT NULL,
+    ip_address VARCHAR(45) NOT NULL,
+    success BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+);
+
+CREATE INDEX idx_email_ip ON login_attempts(email, ip_address);
+CREATE INDEX idx_created_at ON login_attempts(created_at);
+
+-- Таблица стран
+CREATE TABLE country (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    code VARCHAR(3) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Таблица городов
+CREATE TABLE city (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    country_id INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (country_id) REFERENCES country(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_country_id ON city(country_id);
+CREATE INDEX idx_city_name ON city(name);
+
+-- Таблица аэропортов
+CREATE TABLE airport (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    code VARCHAR(3) NOT NULL UNIQUE,
+    city_id INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (city_id) REFERENCES city(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_city_id_airport ON airport(city_id);
+
+-- Таблица виз
+CREATE TABLE visa (
+    id SERIAL PRIMARY KEY,
+    county_citizenship_id INTEGER NOT NULL,
+    county_arrival_id INTEGER NOT NULL,
+    visa_rule TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (county_citizenship_id) REFERENCES country(id) ON DELETE CASCADE,
+    FOREIGN KEY (county_arrival_id) REFERENCES country(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_citizenship ON visa(county_citizenship_id);
+CREATE INDEX idx_arrival ON visa(county_arrival_id);
+
+-- Таблица авиакомпаний
+CREATE TABLE airline_company (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    country_id INTEGER NOT NULL,
+    code VARCHAR(3) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (country_id) REFERENCES country(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_country_id_airline ON airline_company(country_id);
+CREATE INDEX idx_airline_name ON airline_company USING gin (to_tsvector('english', name));
+
+-- Таблица моделей самолетов
+CREATE TABLE aircraft (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    seats INTEGER NOT NULL CHECK (seats > 0),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Таблица самолетов
+CREATE TABLE plane (
+    id SERIAL PRIMARY KEY,
+    aircraft_id INTEGER NOT NULL,
+    serial_number VARCHAR(50) NOT NULL UNIQUE,
+    airline_company_id INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (aircraft_id) REFERENCES aircraft(id) ON DELETE CASCADE,
+    FOREIGN KEY (airline_company_id) REFERENCES airline_company(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_aircraft_id ON plane(aircraft_id);
+CREATE INDEX idx_airline_company_id ON plane(airline_company_id);
+
+-- Таблица рейсов
+CREATE TABLE flight (
+    id SERIAL PRIMARY KEY,
+    flight_number VARCHAR(10) NOT NULL,
+    plane_id INTEGER NOT NULL,
+    departure_airport_id INTEGER NOT NULL,
+    arrival_airport_id INTEGER NOT NULL,
+    departure_time TIMESTAMP NOT NULL,
+    arrival_time TIMESTAMP NOT NULL,
+    deleted_at TIMESTAMP NULL,
+    duration_minutes INTEGER GENERATED ALWAYS AS (EXTRACT(EPOCH FROM (arrival_time - departure_time)) / 60) STORED,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (plane_id) REFERENCES plane(id) ON DELETE CASCADE,
+    FOREIGN KEY (departure_airport_id) REFERENCES airport(id) ON DELETE CASCADE,
+    FOREIGN KEY (arrival_airport_id) REFERENCES airport(id) ON DELETE CASCADE,
+    CONSTRAINT chk_arrival_after_departure CHECK (arrival_time > departure_time)
+);
+
+CREATE INDEX idx_plane_id_flight ON flight(plane_id);
+CREATE INDEX idx_departure_airport ON flight(departure_airport_id);
+CREATE INDEX idx_arrival_airport ON flight(arrival_airport_id);
+CREATE INDEX idx_flight_dates ON flight(departure_time, arrival_time);
+CREATE INDEX idx_flight_route ON flight(departure_airport_id, arrival_airport_id, departure_time);
+
+-- Таблица мест в самолете
+CREATE TABLE seat (
+    id SERIAL PRIMARY KEY,
+    seat_number VARCHAR(10) NOT NULL,
+    plane_id INTEGER NOT NULL,
+    type INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (plane_id) REFERENCES plane(id) ON DELETE CASCADE,
+    FOREIGN KEY (type) REFERENCES seat_type(id) ON DELETE RESTRICT,
+    UNIQUE (seat_number, plane_id)
+);
+
+CREATE INDEX idx_plane_id_seat ON seat(plane_id);
+
+-- Таблица мест на рейсе
+CREATE TABLE flight_seat (
+    id SERIAL PRIMARY KEY,
+    flight_id INTEGER NOT NULL,
+    seat_id INTEGER NOT NULL,
+    is_active BOOLEAN DEFAULT TRUE,
+    price DECIMAL(10,2) NOT NULL CHECK (price >= 0),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (flight_id) REFERENCES flight(id) ON DELETE CASCADE,
+    FOREIGN KEY (seat_id) REFERENCES seat(id) ON DELETE CASCADE,
+    UNIQUE (flight_id, seat_id)
+);
+
+CREATE INDEX idx_flight_id ON flight_seat(flight_id);
+CREATE INDEX idx_seat_id ON flight_seat(seat_id);
+
+-- Таблица людей (пассажиров)
+CREATE TABLE people (
+    id SERIAL PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL,
+    patronymic VARCHAR(50),
+    phone_number VARCHAR(20),
+    passport_data VARCHAR(100) NOT NULL UNIQUE,
+    birthdate DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_passport ON people(passport_data);
+CREATE INDEX idx_people_name ON people(firstname, surname, patronymic);
+CREATE INDEX idx_people_birthdate ON people(birthdate);
+
+-- Таблица билетов
+CREATE TABLE ticket (
+    id SERIAL PRIMARY KEY,
+    serial_number VARCHAR(50) NOT NULL UNIQUE,
+    user_id INTEGER NOT NULL,
+    flight_seat_id INTEGER NOT NULL,
+    book_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status VARCHAR(20) DEFAULT 'booked' CHECK (status IN ('booked', 'confirmed', 'cancelled', 'used')),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (flight_seat_id) REFERENCES flight_seat(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_user_id_ticket ON ticket(user_id);
+CREATE INDEX idx_flight_seat_id_ticket ON ticket(flight_seat_id);
+CREATE INDEX idx_ticket_activity ON ticket(status, book_date);
+
+-- Таблица отелей
+CREATE TABLE hotel (
+    id SERIAL PRIMARY KEY,
+    country_id INTEGER NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    address TEXT NOT NULL,
+    star INTEGER CHECK (star >= 1 AND star <= 5),
+    deleted_at TIMESTAMP NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (country_id) REFERENCES country(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_country_id_hotel ON hotel(country_id);
+CREATE INDEX idx_hotel_name ON hotel USING gin (to_tsvector('english', name));
+
+-- Таблица номеров отеля
+CREATE TABLE room (
+    id SERIAL PRIMARY KEY,
+    hotel_id INTEGER NOT NULL,
+    floor INTEGER NOT NULL CHECK (floor >= 0),
+    type INTEGER NOT NULL,
+    price DECIMAL(10,2) NOT NULL CHECK (price >= 0),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id) ON DELETE CASCADE,
+    FOREIGN KEY (type) REFERENCES room_type(id) ON DELETE RESTRICT
+);
+
+CREATE INDEX idx_hotel_id_room ON room(hotel_id);
+
+-- Таблица бронирований отелей
+CREATE TABLE booking_hotel (
+    id SERIAL PRIMARY KEY,
+    room_id INTEGER NOT NULL,
+    serial_number VARCHAR(50) NOT NULL UNIQUE,
+    people_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    date_arrival DATE NOT NULL,
+    date_departure DATE NOT NULL,
+    status VARCHAR(20) DEFAULT 'reserved' CHECK (status IN ('reserved', 'confirmed', 'checked_in', 'checked_out', 'cancelled')),
+    nights_count INTEGER GENERATED ALWAYS AS (date_departure - date_arrival) STORED,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (room_id) REFERENCES room(id) ON DELETE CASCADE,
+    FOREIGN KEY (people_id) REFERENCES people(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    CONSTRAINT chk_departure_after_arrival CHECK (date_departure > date_arrival)
+);
+
+CREATE INDEX idx_room_id ON booking_hotel(room_id);
+CREATE INDEX idx_people_id_bh ON booking_hotel(people_id);
+CREATE INDEX idx_user_id_bh ON booking_hotel(user_id);
+CREATE INDEX idx_booking_dates ON booking_hotel(date_arrival, date_departure);
+
+-- Таблица бронирований авиабилетов
+CREATE TABLE booking_plane (
+    id SERIAL PRIMARY KEY,
+    flight_seat_id INTEGER NOT NULL,
+    serial_number VARCHAR(50) NOT NULL UNIQUE,
+    user_id INTEGER NOT NULL,
+    people_id INTEGER NOT NULL,
+    date_arrival DATE,
+    date_departure DATE,
+    status VARCHAR(20) DEFAULT 'reserved' CHECK (status IN ('reserved', 'confirmed', 'cancelled', 'used')),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (flight_seat_id) REFERENCES flight_seat(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (people_id) REFERENCES people(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_flight_seat_id_bp ON booking_plane(flight_seat_id);
+CREATE INDEX idx_user_id_bp ON booking_plane(user_id);
+CREATE INDEX idx_people_id_bp ON booking_plane(people_id);
+
+-- Таблица токенов
+CREATE TABLE tokens (
+    id SERIAL PRIMARY KEY,
+    refresh_token VARCHAR(500) NOT NULL,
+    user_id INTEGER NOT NULL,
+    expires_at TIMESTAMP NOT NULL,
+    device VARCHAR(100),
+    is_revoked BOOLEAN DEFAULT FALSE,
+    user_agent TEXT,
+    ip_address VARCHAR(45),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_user_id_tokens ON tokens(user_id);
+CREATE INDEX idx_refresh_token ON tokens(refresh_token);
+CREATE INDEX idx_expires_at ON tokens(expires_at);
+
+-- Таблица правил
+CREATE TABLE rules (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    path VARCHAR(100) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Таблица разрешений
+CREATE TABLE permissions (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    rule_id INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (rule_id) REFERENCES rules(id) ON DELETE CASCADE,
+    UNIQUE (user_id, rule_id)
+);
+
+CREATE INDEX idx_user_id_permissions ON permissions(user_id);
+CREATE INDEX idx_rule_id_permissions ON permissions(rule_id);
+
+-- Таблица для логов изменений
+-- Таблица для логов изменений с корректным партиционированием
+CREATE TABLE audit_log (
+    id BIGSERIAL,
+    table_name VARCHAR(50) NOT NULL,
+    record_id INTEGER NOT NULL,
+    action VARCHAR(10) NOT NULL CHECK (action IN ('INSERT', 'UPDATE', 'DELETE')),
+    old_values JSONB,
+    new_values JSONB,
+    user_id INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id, created_at)
+) PARTITION BY RANGE (created_at);
+
+CREATE INDEX idx_table_record_audit ON audit_log(table_name, record_id);
+CREATE INDEX idx_created_at_audit ON audit_log(created_at);
+CREATE INDEX idx_action_audit ON audit_log(action);
+CREATE INDEX idx_user_id_audit ON audit_log(user_id);
+
+-- Создание партиций для audit_log
+CREATE TABLE audit_log_2023 PARTITION OF audit_log
+    FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+
+CREATE TABLE audit_log_2024_01 PARTITION OF audit_log
+    FOR VALUES FROM ('2024-01-01') TO ('2024-02-01');
+
+CREATE TABLE audit_log_2024_02 PARTITION OF audit_log
+    FOR VALUES FROM ('2024-02-01') TO ('2024-03-01');
+
+CREATE TABLE audit_log_2024_03 PARTITION OF audit_log
+    FOR VALUES FROM ('2024-03-01') TO ('2024-04-01');
+
+CREATE TABLE audit_log_2024_future PARTITION OF audit_log
+    FOR VALUES FROM ('2024-04-01') TO ('2025-01-01');
+
+CREATE TABLE audit_log_default PARTITION OF audit_log DEFAULT;
+-- Таблица для кэширования статистики
+CREATE TABLE statistics_cache (
+    id SERIAL PRIMARY KEY,
+    metric_name VARCHAR(50) NOT NULL,
+    metric_value DECIMAL(15,2) NOT NULL,
+    period_date DATE NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (metric_name, period_date)
+);
+
+CREATE INDEX idx_period_date ON statistics_cache(period_date);
+
+-- Триггеры для автоматического обновления updated_at
+CREATE TRIGGER update_users_updated_at BEFORE UPDATE ON users
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_statistics_cache_updated_at BEFORE UPDATE ON statistics_cache
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+-- Функции для валидации данных
+CREATE OR REPLACE FUNCTION validate_booking_dates()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.date_arrival >= NEW.date_departure THEN
+        RAISE EXCEPTION 'Departure date must be after arrival date';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION validate_flight_times()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.arrival_time <= NEW.departure_time THEN
+        RAISE EXCEPTION 'Arrival time must be after departure time';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Триггеры для валидации
+CREATE TRIGGER trigger_validate_booking_dates
+    BEFORE INSERT OR UPDATE ON booking_hotel
+    FOR EACH ROW EXECUTE FUNCTION validate_booking_dates();
+
+CREATE TRIGGER trigger_validate_flight_times
+    BEFORE INSERT OR UPDATE ON flight
+    FOR EACH ROW EXECUTE FUNCTION validate_flight_times();
+
+-- Представления для удобных запросов
+CREATE VIEW booking_details AS
+SELECT 
+    bh.id,
+    bh.serial_number,
+    u.username,
+    p.firstname,
+    p.surname,
+    h.name as hotel_name,
+    rt.name as room_type,
+    bh.date_arrival,
+    bh.date_departure,
+    bh.nights_count,
+    bh.status
+FROM booking_hotel bh
+JOIN users u ON bh.user_id = u.id
+JOIN people p ON bh.people_id = p.id
+JOIN room r ON bh.room_id = r.id
+JOIN room_type rt ON r.type = rt.id
+JOIN hotel h ON r.hotel_id = h.id
+WHERE bh.status != 'cancelled';
+
+CREATE VIEW flight_details AS
+SELECT 
+    f.id,
+    f.flight_number,
+    ac.name as airline_name,
+    dep_air.name as departure_airport,
+    dep_city.name as departure_city,
+    arr_air.name as arrival_airport,
+    arr_city.name as arrival_city,
+    f.departure_time,
+    f.arrival_time,
+    f.duration_minutes
+FROM flight f
+JOIN plane pl ON f.plane_id = pl.id
+JOIN airline_company ac ON pl.airline_company_id = ac.id
+JOIN airport dep_air ON f.departure_airport_id = dep_air.id
+JOIN city dep_city ON dep_air.city_id = dep_city.id
+JOIN airport arr_air ON f.arrival_airport_id = arr_air.id
+JOIN city arr_city ON arr_air.city_id = arr_city.id
+WHERE f.deleted_at IS NULL;
+
+-- Вставка базовых данных
+INSERT INTO seat_type (name, description) VALUES 
+('economy', 'Эконом класс'),
+('business', 'Бизнес класс'),
+('first', 'Первый класс');
+
+INSERT INTO room_type (name, description, max_occupancy) VALUES 
+('standard', 'Стандартный номер', 2),
+('deluxe', 'Номер делюкс', 2),
+('suite', 'Люкс', 4),
+('family', 'Семейный номер', 4);
