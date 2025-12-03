@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LoginomProject>
+  <Process name="ETL_Groups_to_Result">
+    <!-- Best-effort Loginom .lgx representation.
+         Blocks are represented with generic tags: Block, Param, Connection.
+         You may need to map these to Loginom's exact block types/parameters in the GUI. -->
+    <Blocks>
+      <Block id="b1" type="ExcelRead" name="Read_Groups_Networks">
+        <Param name="FilePath">/mnt/data/Задание для зачета по ETL.xlsx</Param>
+        <Param name="SheetName">Группы сетей</Param>
+        <Param name="HeaderRow">0</Param>
+      </Block>
+
+      <Block id="b2" type="ExcelRead" name="Read_Groups_Protocols">
+        <Param name="FilePath">/mnt/data/Задание для зачета по ETL.xlsx</Param>
+        <Param name="SheetName">Группы протоколов</Param>
+        <Param name="HeaderRow">0</Param>
+      </Block>
+
+      <Block id="b3" type="ExcelRead" name="Read_Access_Rules">
+        <Param name="FilePath">/mnt/data/Задание для зачета по ETL.xlsx</Param>
+        <Param name="SheetName">Правила доступа</Param>
+        <Param name="HeaderRow">0</Param>
+      </Block>
+
+      <!-- Normalize network groups: fill down group name and keep only IP rows -->
+      <Block id="b4" type="Transform" name="Normalize_Network_Groups">
+        <Param name="Operation">FillDown</Param>
+        <Param name="Columns">№,Название сети,Описание</Param>
+      </Block>
+
+      <Block id="b5" type="Filter" name="Filter_IPs">
+        <Param name="FilterExpr">Состав IS NOT NULL AND TRIM(Состав) != ''</Param>
+      </Block>
+
+      <!-- Normalize protocol groups -->
+      <Block id="b6" type="Transform" name="Normalize_Protocol_Groups">
+        <Param name="Operation">FillDown</Param>
+        <Param name="Columns">№,Название группы,Описание</Param>
+      </Block>
+
+      <Block id="b7" type="ParseProtocols" name="Parse_Protocol_Descriptions">
+        <Param name="InputColumn">Описание</Param>
+        <Param name="OutputColumns">protocol, src_port_start, src_port_end, dst_port_start, dst_port_end</Param>
+        <!-- This block expects expressions like "TCP: с любого на 80" or "ICMP: 8" -->
+      </Block>
+
+      <!-- Normalize rules: fill down rule name and split sections into rows -->
+      <Block id="b8" type="Transform" name="Normalize_Rules">
+        <Param name="Operation">FillDown</Param>
+        <Param name="Columns">№,Название правила</Param>
+      </Block>
+
+      <Block id="b9" type="ExplodeRules" name="Explode_Rules_Sections">
+        <Param name="SourceColumn">Источники</Param>
+        <Param name="DestColumn">Назначения</Param>
+        <Param name="ServiceColumn">Сервисы и приложения</Param>
+        <!-- This block should create rows: rule_name | source_group | dest_group | service -->
+      </Block>
+
+      <!-- Join rules' source/dest group names to network group IPs -->
+      <Block id="b10" type="Join" name="Join_Sources_to_IPs">
+        <Param name="LeftKey">source_group</Param>
+        <Param name="RightKey">Название сети</Param>
+        <Param name="JoinType">Inner</Param>
+        <Param name="RightSelectColumn">Состав</Param>
+        <Param name="OutputAlias">src_ip</Param>
+      </Block>
+
+      <Block id="b11" type="Join" name="Join_Destinations_to_IPs">
+        <Param name="LeftKey">dest_group</Param>
+        <Param name="RightKey">Название сети</Param>
+        <Param name="JoinType">Inner</Param>
+        <Param name="RightSelectColumn">Состав</Param>
+        <Param name="OutputAlias">dst_ip</Param>
+      </Block>
+
+      <!-- Join services to parsed protocols -->
+      <Block id="b12" type="Join" name="Join_Services_to_Protocols">
+        <Param name="LeftKey">service</Param>
+        <Param name="RightKey">Описание</Param>
+        <Param name="RightTable">Parsed_Protocols</Param>
+        <Param name="OutputColumns">protocol, dst_port_start, dst_port_end, src_port_start, src_port_end</Param>
+      </Block>
+
+      <!-- Cross join src_ip x dst_ip x protocol rows -->
+      <Block id="b13" type="CrossJoin" name="CrossJoin_Src_Dst_Protocol">
+        <Param name="Inputs">Join_Sources_to_IPs,Join_Destinations_to_IPs,Join_Services_to_Protocols</Param>
+      </Block>
+
+      <!-- Final projection/rename to match ETL target -->
+      <Block id="b14" type="Transform" name="Project_Result">
+        <Param name="SelectExpr">
+src_ip AS src_ip,
+dst_ip AS dst_ip,
+COALESCE(src_port_start, 'any') AS src_port_start,
+COALESCE(src_port_end, 'any') AS src_port_end,
+COALESCE(dst_port_start, 'any') AS dst_port_start,
+COALESCE(dst_port_end, 'any') AS dst_port_end,
+protocol AS protocol,
+Название правила AS rule_name,
+Коментарий AS comment
+        </Param>
+      </Block>
+
+      <!-- Write result to Excel (or to Postgres; here we write to Excel for inspection) -->
+      <Block id="b15" type="ExcelWrite" name="Write_Result_Excel">
+        <Param name="FilePath">/mnt/data/Результат_ETL_loginom_generated.xlsx</Param>
+        <Param name="SheetName">Результат_ETL</Param>
+        <Param name="Overwrite">true</Param>
+      </Block>
+
+    </Blocks>
+
+    <Connections>
+      <!-- Reads to normalizers -->
+      <Connection from="b1" to="b4"/>
+      <Connection from="b4" to="b5"/>
+      <Connection from="b2" to="b6"/>
+      <Connection from="b6" to="b7"/>
+      <Connection from="b3" to="b8"/>
+      <Connection from="b8" to="b9"/>
+
+      <!-- Protocol parsing output goes to a named table Parsed_Protocols (conceptual) -->
+      <Connection from="b7" to="Parsed_Protocols"/>
+
+      <!-- Rules exploded output joins to network groups -->
+      <Connection from="b9" to="b10"/>
+      <Connection from="Parsed_Protocols" to="b12"/>
+      <Connection from="b9" to="b11"/>
+      <Connection from="b10" to="b13"/>
+      <Connection from="b11" to="b13"/>
+      <Connection from="b12" to="b13"/>
+
+      <!-- CrossJoin -> projection -> write -->
+      <Connection from="b13" to="b14"/>
+      <Connection from="b14" to="b15"/>
+    </Connections>
+
+  </Process>
+</LoginomProject>
