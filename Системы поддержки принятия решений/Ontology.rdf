@@ -1,0 +1,814 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11/"
+     xml:base="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-11="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Забронирован -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Забронирован">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_авиакомпанию -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_авиакомпанию">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_владельца -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_владельца">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_город_назначения -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_город_назначения">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_город_прибытия -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_город_прибытия">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_номер -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_номер">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_рейс -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_рейс">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_самолёт -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_самолёт">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Находится_в_городе -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Находится_в_городе">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Находится_в_стране -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Находится_в_стране">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Обслуживается_пользователем -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Обслуживается_пользователем">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оплачен -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оплачен">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пересадка_в -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пересадка_в">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Работает_в -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Работает_в">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Создан_пользователем -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Создан_пользователем">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Вместимость -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Вместимость">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Возраст -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Возраст">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_вылета -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_вылета">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_выселения -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_выселения">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_заселения -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_заселения">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_прибытия -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_прибытия">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_рождения -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_рождения">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имя -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имя">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Класс -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Класс">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Модель_самолёта -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Модель_самолёта">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Наименование -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Наименование">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Отчество -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Отчество">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Серия_и_номер_паспорта -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Серия_и_номер_паспорта">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Фамилия -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Фамилия">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Цена -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Цена">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Этаж -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Этаж">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_администратора -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_администратора">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_клиента -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_клиента">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_контент-менеджера -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_контент-менеджера">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_оператора -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_оператора">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_авиабилета -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_авиабилета">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Клиент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Клиент">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+        <untitled-ontology-11:Находится_в_стране rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна1"/>
+        <untitled-ontology-11:Наименование>Авиакомпания</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор"/>
+        <untitled-ontology-11:Имя>Владимир</untitled-ontology-11:Имя>
+        <untitled-ontology-11:Отчество>Владимирович</untitled-ontology-11:Отчество>
+        <untitled-ontology-11:Фамилия>Владимиров</untitled-ontology-11:Фамилия>
+        <untitled-ontology-11:имеет_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-11:имеет_права_администратора>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера"/>
+        <untitled-ontology-11:Забронирован rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир1"/>
+        <untitled-ontology-11:Имеет_номер rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер1"/>
+        <untitled-ontology-11:Оплачен rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир1"/>
+        <untitled-ontology-11:Дата_выселения>03.01.2026</untitled-ontology-11:Дата_выселения>
+        <untitled-ontology-11:Дата_заселения>01.01.2026</untitled-ontology-11:Дата_заселения>
+        <untitled-ontology-11:Номер rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</untitled-ontology-11:Номер>
+        <untitled-ontology-11:Цена rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000</untitled-ontology-11:Цена>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера"/>
+        <untitled-ontology-11:Забронирован rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир2"/>
+        <untitled-ontology-11:Имеет_номер rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер2"/>
+        <untitled-ontology-11:Оплачен rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир2"/>
+        <untitled-ontology-11:Дата_выселения>10.01.2026</untitled-ontology-11:Дата_выселения>
+        <untitled-ontology-11:Дата_заселения>05.01.2026</untitled-ontology-11:Дата_заселения>
+        <untitled-ontology-11:Номер rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</untitled-ontology-11:Номер>
+        <untitled-ontology-11:Цена rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000</untitled-ontology-11:Цена>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_авиабилета"/>
+        <untitled-ontology-11:Забронирован rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир1"/>
+        <untitled-ontology-11:Имеет_рейс rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс1"/>
+        <untitled-ontology-11:Оплачен rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир1"/>
+        <untitled-ontology-11:Номер rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</untitled-ontology-11:Номер>
+        <untitled-ontology-11:Цена rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000</untitled-ontology-11:Цена>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Ваучер4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_авиабилета"/>
+        <untitled-ontology-11:Забронирован rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир2"/>
+        <untitled-ontology-11:Имеет_рейс rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс2"/>
+        <untitled-ontology-11:Оплачен rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир2"/>
+        <untitled-ontology-11:Номер rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</untitled-ontology-11:Номер>
+        <untitled-ontology-11:Цена rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000</untitled-ontology-11:Цена>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+        <untitled-ontology-11:Находится_в_стране rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна1"/>
+        <untitled-ontology-11:Возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">700</untitled-ontology-11:Возраст>
+        <untitled-ontology-11:Наименование>Город1</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+        <untitled-ontology-11:Находится_в_стране rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна1"/>
+        <untitled-ontology-11:Возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">150</untitled-ontology-11:Возраст>
+        <untitled-ontology-11:Наименование>Город2</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
+        <untitled-ontology-11:Находится_в_городе rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_1"/>
+        <untitled-ontology-11:Возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">40</untitled-ontology-11:Возраст>
+        <untitled-ontology-11:Класс rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</untitled-ontology-11:Класс>
+        <untitled-ontology-11:Наименование>Гостиница</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер"/>
+        <untitled-ontology-11:Имя>Илья</untitled-ontology-11:Имя>
+        <untitled-ontology-11:Отчество>Ильич</untitled-ontology-11:Отчество>
+        <untitled-ontology-11:Фамилия>Ильин</untitled-ontology-11:Фамилия>
+        <untitled-ontology-11:имеет_права_контент-менеджера rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-11:имеет_права_контент-менеджера>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер1">
+        <untitled-ontology-11:Имеет_владельца rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница1"/>
+        <untitled-ontology-11:Вместимость rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</untitled-ontology-11:Вместимость>
+        <untitled-ontology-11:Этаж rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</untitled-ontology-11:Этаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер2">
+        <untitled-ontology-11:Имеет_владельца rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница1"/>
+        <untitled-ontology-11:Вместимость rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</untitled-ontology-11:Вместимость>
+        <untitled-ontology-11:Этаж rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</untitled-ontology-11:Этаж>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор"/>
+        <untitled-ontology-11:Имя>Павел</untitled-ontology-11:Имя>
+        <untitled-ontology-11:Отчество>Павлович</untitled-ontology-11:Отчество>
+        <untitled-ontology-11:Фамилия>Павлов</untitled-ontology-11:Фамилия>
+        <untitled-ontology-11:имеет_права_оператора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-11:имеет_права_оператора>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Клиент"/>
+        <untitled-ontology-11:Возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">25</untitled-ontology-11:Возраст>
+        <untitled-ontology-11:Дата_рождения>01.01.2000 10:00:00</untitled-ontology-11:Дата_рождения>
+        <untitled-ontology-11:Имя>Иван</untitled-ontology-11:Имя>
+        <untitled-ontology-11:Отчество>Иванович</untitled-ontology-11:Отчество>
+        <untitled-ontology-11:Серия_и_номер_паспорта>1111 111111</untitled-ontology-11:Серия_и_номер_паспорта>
+        <untitled-ontology-11:Фамилия>Иванов</untitled-ontology-11:Фамилия>
+        <untitled-ontology-11:имеет_права_клиента rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-11:имеет_права_клиента>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пассажир2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Клиент"/>
+        <untitled-ontology-11:Возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45</untitled-ontology-11:Возраст>
+        <untitled-ontology-11:Дата_рождения>01.01.1981 10:00:00</untitled-ontology-11:Дата_рождения>
+        <untitled-ontology-11:Имя>Петр</untitled-ontology-11:Имя>
+        <untitled-ontology-11:Отчество>Петрович</untitled-ontology-11:Отчество>
+        <untitled-ontology-11:Серия_и_номер_паспорта rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2222 222222</untitled-ontology-11:Серия_и_номер_паспорта>
+        <untitled-ontology-11:Фамилия>Петров</untitled-ontology-11:Фамилия>
+        <untitled-ontology-11:имеет_права_клиента rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-11:имеет_права_клиента>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+        <untitled-ontology-11:Имеет_город_назначения rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_1"/>
+        <untitled-ontology-11:Имеет_город_прибытия rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_2"/>
+        <untitled-ontology-11:Имеет_самолёт rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт1"/>
+        <untitled-ontology-11:Обслуживается_пользователем rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор1"/>
+        <untitled-ontology-11:Создан_пользователем rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер"/>
+        <untitled-ontology-11:Дата_вылета>01.01.2026</untitled-ontology-11:Дата_вылета>
+        <untitled-ontology-11:Дата_прибытия>02.01.2026</untitled-ontology-11:Дата_прибытия>
+        <untitled-ontology-11:Номер rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</untitled-ontology-11:Номер>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+        <untitled-ontology-11:Имеет_город_назначения rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_2"/>
+        <untitled-ontology-11:Имеет_город_прибытия rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город_1"/>
+        <untitled-ontology-11:Имеет_самолёт rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт2"/>
+        <untitled-ontology-11:Обслуживается_пользователем rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор1"/>
+        <untitled-ontology-11:Создан_пользователем rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор1"/>
+        <untitled-ontology-11:Дата_вылета>03.01.2026</untitled-ontology-11:Дата_вылета>
+        <untitled-ontology-11:Дата_прибытия>04.01.2026</untitled-ontology-11:Дата_прибытия>
+        <untitled-ontology-11:Номер rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</untitled-ontology-11:Номер>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+        <untitled-ontology-11:Имеет_авиакомпанию rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания1"/>
+        <untitled-ontology-11:Вместимость rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</untitled-ontology-11:Вместимость>
+        <untitled-ontology-11:Модель_самолёта>Модель_самолёта_1</untitled-ontology-11:Модель_самолёта>
+        <untitled-ontology-11:Наименование>Самолёт_имя_2</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+        <untitled-ontology-11:Имеет_авиакомпанию rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания1"/>
+        <untitled-ontology-11:Вместимость rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</untitled-ontology-11:Вместимость>
+        <untitled-ontology-11:Модель_самолёта>Модель_самолёта_2</untitled-ontology-11:Модель_самолёта>
+        <untitled-ontology-11:Наименование>Самолет_имя_2</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
+        <untitled-ontology-11:Возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000</untitled-ontology-11:Возраст>
+        <untitled-ontology-11:Наименование>Страна1</untitled-ontology-11:Наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Клиент"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Вместимость"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Возраст"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_вылета"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_прибытия"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_рождения"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имя"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Класс"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Модель_самолёта"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Наименование"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Отчество"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Серия_и_номер_паспорта"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Фамилия"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Этаж"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
