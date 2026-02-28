@@ -27,6 +27,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Забронирован">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
     </owl:ObjectProperty>
     
@@ -37,6 +38,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_авиакомпанию">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
     </owl:ObjectProperty>
     
@@ -57,6 +59,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_город_назначения">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
     </owl:ObjectProperty>
     
@@ -67,6 +70,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_город_прибытия">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
     </owl:ObjectProperty>
     
@@ -76,6 +80,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_номер">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
     </owl:ObjectProperty>
     
@@ -86,6 +91,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_рейс">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_авиабилета"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
     </owl:ObjectProperty>
     
@@ -96,6 +102,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имеет_самолёт">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
     </owl:ObjectProperty>
     
@@ -106,6 +113,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Находится_в_городе">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
     </owl:ObjectProperty>
     
@@ -116,7 +124,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Находится_в_стране">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
     </owl:ObjectProperty>
     
 
@@ -125,6 +133,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Обслуживается_пользователем">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
     </owl:ObjectProperty>
     
@@ -135,6 +144,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оплачен">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
     </owl:ObjectProperty>
     
@@ -145,6 +155,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пересадка_в">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
     </owl:ObjectProperty>
     
@@ -162,6 +173,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Создан_пользователем">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
     </owl:ObjectProperty>
     
@@ -182,6 +194,8 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Вместимость">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -191,6 +205,11 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Возраст">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -200,6 +219,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_вылета">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -209,6 +229,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_выселения">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -218,6 +239,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_заселения">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование_номера"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -227,6 +249,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_прибытия">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -236,6 +259,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_рождения">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -245,6 +269,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имя">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -254,6 +279,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Класс">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -263,6 +289,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Модель_самолёта">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -272,6 +299,11 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Наименование">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -281,6 +313,9 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -290,6 +325,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Отчество">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -299,6 +335,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Серия_и_номер_паспорта">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -308,6 +345,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Фамилия">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -317,6 +355,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Цена">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -326,6 +365,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Этаж">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -335,6 +375,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_администратора">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -344,6 +385,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_клиента">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -353,6 +395,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_контент-менеджера">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -362,6 +405,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#имеет_права_оператора">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     </owl:DatatypeProperty>
     
@@ -754,56 +798,10 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Авиакомпания"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Бронирование"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Город"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Гостиница"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Пользователь"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Рейс"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Самолёт"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Страна"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Администратор"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Клиент"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Контент-менеджер"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Оператор"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointProperties"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Вместимость"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Возраст"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_вылета"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_прибытия"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Дата_рождения"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Имя"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Класс"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Модель_самолёта"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Наименование"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Номер"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Отчество"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Серия_и_номер_паспорта"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Фамилия"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/rkuzu/ontologies/2026/1/untitled-ontology-11#Этаж"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
