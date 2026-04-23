@@ -1,0 +1,957 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14/"
+     xml:base="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-14="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#болеть -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#болеть">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#вводить_данные_о_здоровье -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#вводить_данные_о_здоровье">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Внешние_пользователи"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#взвешиваться_на -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#взвешиваться_на">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#добавлять_в_систему -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#добавлять_в_систему">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Администратор"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#измерять_глюкозу -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#измерять_глюкозу">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#измерять_давление -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#измерять_давление">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#лечить -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#лечить">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_диетолог"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_эндокринолог"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#носить_в_руке -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#носить_в_руке">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#носить_на_руке -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#носить_на_руке">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#носить_устройство_измерения_сахара -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#носить_устройство_измерения_сахара">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#повышать -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#повышать">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#получать -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#получать">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Достижение"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#редактировать_в_админ_панели -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#редактировать_в_админ_панели">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Администратор"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#составить_диету_для -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#составить_диету_для">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_диетолог"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#ставить_пациенту -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#ставить_пациенту">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#возраст -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#возраст">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#генерируются_системой -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#генерируются_системой">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#должность -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#должность">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#есть_права_администратора -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#есть_права_администратора">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#есть_учетная_запись -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#есть_учетная_запись">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#заряд_батареи -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#заряд_батареи">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Технические_средства"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#имя -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#имя">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#название_достижения -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#название_достижения">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Достижение"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#наименование -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#наименование">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Технические_средства"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#нозология -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#нозология">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#определены_в_системе_по_умолчанию -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#определены_в_системе_по_умолчанию">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#степень_тяжести -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#степень_тяжести">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Администратор -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Администратор">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#должность"/>
+                        <owl:hasValue>Администратор</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#есть_права_администратора"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Медицинское_устройство"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Взрослый_пациент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Взрослый_пациент">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#возраст"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Несовершеннолетний_пациент"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Внешние_пользователи -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Внешние_пользователи">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_диетолог -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_диетолог">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#должность"/>
+                        <owl:hasValue>Диетолог</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_эндокринолог -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Врач_эндокринолог">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#должность"/>
+                        <owl:hasValue>Эндокринолог</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Медицинское_устройство"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#степень_тяжести"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Достижение -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Достижение">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#генерируются_системой"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Элемент_геймификации"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Медицинское_устройство -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Медицинское_устройство">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Технические_средства"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Не_родственник -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Не_родственник">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Родственник"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Несовершеннолетний_пациент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Несовершеннолетний_пациент">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#возраст"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Носимый_гаджет -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Носимый_гаджет">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Технические_средства"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Внешние_пользователи"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Внешние_пользователи"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Персонал">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пользователи">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#есть_учетная_запись"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Родственник -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Родственник">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Медицинское_устройство"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Носимый_гаджет"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Технические_средства -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Технические_средства">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#заряд_батареи"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Медицинское_устройство"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#определены_в_системе_по_умолчанию"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Элемент_геймификации"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Носимый_гаджет"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Элемент_геймификации -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Элемент_геймификации"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Администратор_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Администратор_1">
+        <untitled-ontology-14:редактировать_в_админ_панели rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Доктор_1"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</untitled-ontology-14:возраст>
+        <untitled-ontology-14:должность>Администратор</untitled-ontology-14:должность>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Тартаренко И.А.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы_1">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>ScaleYourSelf_23A</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы_2">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">78</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Весы_ВЗВЕСЬ_СЕБЯ</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр_1">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Глюкометр_Sber_Health_2000</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр_2">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">87</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Глюкометр_182378273_АА2</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_1">
+        <untitled-ontology-14:нозология>Диабет</untitled-ontology-14:нозология>
+        <untitled-ontology-14:степень_тяжести rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</untitled-ontology-14:степень_тяжести>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_2">
+        <untitled-ontology-14:нозология>Гипотиреоз</untitled-ontology-14:нозология>
+        <untitled-ontology-14:степень_тяжести rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</untitled-ontology-14:степень_тяжести>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_3">
+        <untitled-ontology-14:нозология>Пролактинома</untitled-ontology-14:нозология>
+        <untitled-ontology-14:степень_тяжести rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</untitled-ontology-14:степень_тяжести>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Доктор_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Доктор_1">
+        <untitled-ontology-14:составить_диету_для rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_1"/>
+        <untitled-ontology-14:ставить_пациенту rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_1"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</untitled-ontology-14:возраст>
+        <untitled-ontology-14:должность>Диетолог</untitled-ontology-14:должность>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Татищев А.А.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Доктор_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Доктор_2">
+        <untitled-ontology-14:ставить_пациенту rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_2"/>
+        <untitled-ontology-14:ставить_пациенту rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_3"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</untitled-ontology-14:возраст>
+        <untitled-ontology-14:должность>Эндокринолог</untitled-ontology-14:должность>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Григорьев К.К.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Достижение_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Достижение_1">
+        <untitled-ontology-14:генерируются_системой rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:генерируются_системой>
+        <untitled-ontology-14:название_достижения>Заполнить дневник состояния 7 дней подряд</untitled-ontology-14:название_достижения>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Родственник"/>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Иванов А.А.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Опекун_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Не_родственник"/>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Демидов К.И.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_1">
+        <untitled-ontology-14:болеть rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_2"/>
+        <untitled-ontology-14:взвешиваться_на rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы_1"/>
+        <untitled-ontology-14:носить_в_руке rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_1"/>
+        <untitled-ontology-14:носить_устройство_измерения_сахара rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ_1"/>
+        <untitled-ontology-14:повышать rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_3"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</untitled-ontology-14:возраст>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Иванова К.А.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_2">
+        <untitled-ontology-14:болеть rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_1"/>
+        <untitled-ontology-14:болеть rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_2"/>
+        <untitled-ontology-14:измерять_давление rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_2"/>
+        <untitled-ontology-14:носить_в_руке rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_2"/>
+        <untitled-ontology-14:носить_устройство_измерения_сахара rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ_2"/>
+        <untitled-ontology-14:повышать rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_2"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</untitled-ontology-14:возраст>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Куркурин А.А.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_3">
+        <untitled-ontology-14:болеть rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_1"/>
+        <untitled-ontology-14:болеть rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_3"/>
+        <untitled-ontology-14:измерять_глюкозу rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр_1"/>
+        <untitled-ontology-14:измерять_давление rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_1"/>
+        <untitled-ontology-14:носить_на_руке rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет_1"/>
+        <untitled-ontology-14:повышать rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_3"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">44</untitled-ontology-14:возраст>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Ерёменко А.В.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Пациент_4">
+        <untitled-ontology-14:болеть rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Диагноз_2"/>
+        <untitled-ontology-14:взвешиваться_на rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы_2"/>
+        <untitled-ontology-14:измерять_глюкозу rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр_2"/>
+        <untitled-ontology-14:измерять_давление rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_2"/>
+        <untitled-ontology-14:носить_в_руке rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_3"/>
+        <untitled-ontology-14:повышать rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_2"/>
+        <untitled-ontology-14:возраст rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</untitled-ontology-14:возраст>
+        <untitled-ontology-14:есть_права_администратора rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</untitled-ontology-14:есть_права_администратора>
+        <untitled-ontology-14:есть_учетная_запись rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:есть_учетная_запись>
+        <untitled-ontology-14:имя>Татищева Р.Р.</untitled-ontology-14:имя>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ_1">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">56</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Система_НМГ_Sber_PRO</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ_2">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Система_НМГ_Sber_Classic_400</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_1">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">55</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Samsung Galaxy A33</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_2">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">93</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>IPhone 10 PRO</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Смартфон_3">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Samsung Galaxy A52</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_1">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">34</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Тонометр_ZUBR_2A</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр_2">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">33</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>ТоноТоноМетр_2000</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_1">
+        <untitled-ontology-14:определены_в_системе_по_умолчанию rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:определены_в_системе_по_умолчанию>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_2">
+        <untitled-ontology-14:определены_в_системе_по_умолчанию rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:определены_в_системе_по_умолчанию>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Уровень_3">
+        <untitled-ontology-14:определены_в_системе_по_умолчанию rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</untitled-ontology-14:определены_в_системе_по_умолчанию>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Фитнес_браслет_1">
+        <untitled-ontology-14:заряд_батареи rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</untitled-ontology-14:заряд_батареи>
+        <untitled-ontology-14:наименование>Apple Watch</untitled-ontology-14:наименование>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Весы"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Глюкометр"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Система_НМГ"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-14#Тонометр"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

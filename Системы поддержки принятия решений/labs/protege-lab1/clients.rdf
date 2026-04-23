@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2/"
+     xml:base="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-2="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_знакомым_с -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_знакомым_с">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_предком -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_предком">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_сиблингом -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_сиблингом">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_мать -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_мать">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_ребенка"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_ребенка -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_ребенка">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#быть_предком"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_количество_заказов -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_количество_заказов">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#последняя_активность -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#последняя_активность">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Активные -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Активные">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#последняя_активность"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-10T00:00:00Z</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Новички"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Отток"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Золотой_покупатель -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Золотой_покупатель">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Активные"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_количество_заказов"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Активные"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Новички -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Новички">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_количество_заказов"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Отток"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Отток -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Отток">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#иметь_количество_заказов"/>
+                                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</owl:hasValue>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#последняя_активность"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-10T00:00:00Z</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Васильев_В. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Васильев_В.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Новички"/>
+        <untitled-ontology-2:быть_сиблингом rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Кузьмин_К."/>
+        <untitled-ontology-2:иметь_мать rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Лазуткина_М."/>
+        <untitled-ontology-2:иметь_мать rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Мурина_М."/>
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</untitled-ontology-2:иметь_количество_заказов>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Кузнецова_М -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Кузнецова_М">
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-31T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Кузьмин_К. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Кузьмин_К.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</untitled-ontology-2:иметь_количество_заказов>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Лазуткина_М. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Лазуткина_М.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Новички"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Марьина_А. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Марьина_А.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <untitled-ontology-2:иметь_ребенка rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Мурина_М."/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Мурина_М. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Мурина_М.">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Новички"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Петрова_А -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Петрова_А">
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-06-20T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Петрова_Е. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Петрова_Е.">
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">67</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-09-10T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Сербин_А._отток -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Сербин_А._отток">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Клиент"/>
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-02-01T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Смирнов_С. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Смирнов_С.">
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-03-11T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Федоров_А. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Федоров_А.">
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-08-12T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Федоров_И. -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sasha/ontologies/2026/1/untitled-ontology-2#Федоров_И.">
+        <untitled-ontology-2:иметь_количество_заказов rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</untitled-ontology-2:иметь_количество_заказов>
+        <untitled-ontology-2:последняя_активность rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-15T00:00:00Z</untitled-ontology-2:последняя_активность>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
