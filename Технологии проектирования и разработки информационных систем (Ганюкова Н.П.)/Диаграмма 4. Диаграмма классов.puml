@@ -1,0 +1,208 @@
+
+@startuml SmartClinic_Appointment_Classes
+
+title C4 - Умная поликлиника Уровень 4. Диаграмма классов
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+left to right direction
+
+interface IAppointmentRepository {
+    +Create(appointment: Appointment): error
+    +FindByID(id: UUID): Appointment
+    +Update(appointment: Appointment): error
+    +FindBySlot(slotID: UUID): List<Appointment>
+}
+
+interface IScheduleRepository {
+    +GetByDoctor(doctorID: UUID): Schedule
+    +GetAvailableSlots(doctorID: UUID, date: Date): List<TimeSlot>
+}
+
+interface IPatientClient {
+    +GetPatient(patientID: UUID): PatientInfo
+}
+
+interface ICache {
+    +Get(key: string): any
+    +Set(key: string, value: any, ttl: Duration): error
+    +Delete(key: string): error
+}
+
+interface IEventPublisher {
+    +Publish(event: AppointmentEvent): error
+}
+
+class AppointmentController {
+    -service: IAppointmentService
+    +CreateAppointment(request: CreateAppointmentRequest): Response
+    +GetAppointment(id: UUID): Response
+    +CancelAppointment(id: UUID): Response
+    +RescheduleAppointment(id: UUID, date: DateTime): Response
+}
+
+class ScheduleController {
+    -service: IAvailabilityService
+    +GetAvailableSlots(doctorID: UUID, date: Date): Response
+}
+
+interface IAppointmentService {
+    +CreateAppointment(request: CreateAppointmentRequest): Appointment
+    +CancelAppointment(id: UUID): error
+    +RescheduleAppointment(id: UUID, date: DateTime): error
+}
+
+interface IAvailabilityService {
+    +CheckAvailability(doctorID: UUID, slotID: UUID): bool
+    +GetAvailableSlots(doctorID: UUID, date: Date): List<TimeSlot>
+}
+
+class AppointmentService {
+    -repository: IAppointmentRepository
+    -availability: IAvailabilityService
+    -patientClient: IPatientClient
+    -publisher: IEventPublisher
+    +CreateAppointment(request: CreateAppointmentRequest): Appointment
+    +CancelAppointment(id: UUID): error
+    +RescheduleAppointment(id: UUID, date: DateTime): error
+}
+
+class AvailabilityService {
+    -appointmentRepository: IAppointmentRepository
+    -scheduleRepository: IScheduleRepository
+    -cache: ICache
+    +CheckAvailability(doctorID: UUID, slotID: UUID): bool
+    +GetAvailableSlots(doctorID: UUID, date: Date): List<TimeSlot>
+}
+
+class BookingPolicy {
+    +ValidatePatient(patient: PatientInfo): error
+    +ValidateBooking(appointment: Appointment): error
+    +ValidateBookingTime(date: DateTime): error
+}
+
+class PostgresAppointmentRepository {
+    -db: PostgreSQL
+    +Create(appointment: Appointment): error
+    +FindByID(id: UUID): Appointment
+    +Update(appointment: Appointment): error
+    +FindBySlot(slotID: UUID): List<Appointment>
+}
+
+class PostgresScheduleRepository {
+    -db: PostgreSQL
+    +GetByDoctor(doctorID: UUID): Schedule
+    +GetAvailableSlots(doctorID: UUID, date: Date): List<TimeSlot>
+}
+
+class PatientServiceClient {
+    -httpClient: HTTPClient
+    +GetPatient(patientID: UUID): PatientInfo
+}
+
+class RedisCache {
+    -client: RedisClient
+    +Get(key: string): any
+    +Set(key: string, value: any, ttl: Duration): error
+    +Delete(key: string): error
+}
+
+class KafkaEventPublisher {
+    -producer: KafkaProducer
+    +Publish(event: AppointmentEvent): error
+}
+
+class Appointment {
+    +ID: UUID
+    +PatientID: UUID
+    +DoctorID: UUID
+    +SlotID: UUID
+    +Status: AppointmentStatus
+    +CreatedAt: DateTime
+    +Cancel(): error
+    +Reschedule(date: DateTime): error
+}
+
+class Schedule {
+    +ID: UUID
+    +DoctorID: UUID
+    +WorkDays: List
+    +GetSlots(date: Date): List<TimeSlot>
+}
+
+class TimeSlot {
+    +ID: UUID
+    +StartTime: DateTime
+    +EndTime: DateTime
+    +IsAvailable: bool
+}
+
+class PatientInfo {
+    +ID: UUID
+    +FullName: string
+    +BirthDate: Date
+    +IsActive: bool
+}
+
+class CreateAppointmentRequest {
+    +PatientID: UUID
+    +DoctorID: UUID
+    +SlotID: UUID
+}
+
+class AppointmentEvent {
+    +AppointmentID: UUID
+    +PatientID: UUID
+    +DoctorID: UUID
+    +EventType: string
+    +CreatedAt: DateTime
+}
+
+enum AppointmentStatus {
+    CREATED
+    CONFIRMED
+    CANCELLED
+    COMPLETED
+}
+
+AppointmentController --> IAppointmentService
+ScheduleController --> IAvailabilityService
+
+AppointmentService ..|> IAppointmentService
+AvailabilityService ..|> IAvailabilityService
+
+PostgresAppointmentRepository ..|> IAppointmentRepository
+PostgresScheduleRepository ..|> IScheduleRepository
+PatientServiceClient ..|> IPatientClient
+RedisCache ..|> ICache
+KafkaEventPublisher ..|> IEventPublisher
+
+AppointmentService --> IAppointmentRepository
+AppointmentService --> IAvailabilityService
+AppointmentService --> IPatientClient
+AppointmentService --> IEventPublisher
+AppointmentService --> BookingPolicy
+
+AvailabilityService --> IAppointmentRepository
+AvailabilityService --> IScheduleRepository
+AvailabilityService --> ICache
+
+AppointmentService ..> Appointment
+AppointmentService ..> CreateAppointmentRequest
+AppointmentService ..> AppointmentEvent
+AvailabilityService ..> Schedule
+AvailabilityService ..> TimeSlot
+BookingPolicy ..> PatientInfo
+BookingPolicy ..> Appointment
+
+Appointment "1" --> "1" AppointmentStatus
+Schedule "1" *-- "0..*" TimeSlot
+
+legend bottom
+    |= Обозначение | Значение |
+    | ..> | Реализация интерфейса |
+    | --> | Зависимость |
+    | *-- | Композиция |
+endlegend
+
+@enduml

@@ -1,0 +1,66 @@
+@startuml SmartClinic_Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title C4 - Умная поликлиника. Уровень 3
+
+LAYOUT_LEFT_RIGHT()
+
+AddElementTag("controller", $bgColor="#08427B", $fontColor="#FFFFFF", $borderColor="#08427B")
+AddElementTag("business",   $bgColor="#1168BD", $fontColor="#FFFFFF", $borderColor="#1168BD")
+AddElementTag("repository", $bgColor="#F5DA81", $fontColor="#000000", $borderColor="#B8A03A")
+AddElementTag("external",   $bgColor="#999999", $fontColor="#FFFFFF", $borderColor="#999999")
+
+Container_Ext(gateway, "API Gateway", "Kong", "Маршрутизация HTTP-запросов к сервису записи.", $tags="external")
+Container_Ext(patientService, "Patient Service", "Go / Gin", "Управление профилями и данными пациентов.", $tags="external")
+Container_Ext(emrService, "EMR Service", "Go / Gin", "Ведение электронных медицинских карт.", $tags="external")
+Container_Ext(notificationService, "Notification Service", "Go / Gin", "Отправка SMS и Email-уведомлений.", $tags="external")
+
+ContainerDb_Ext(appointmentDb, "Appointment Database", "PostgreSQL", "Хранение расписания и записей на приём.", $tags="external")
+ContainerDb_Ext(redis, "Cache", "Redis", "Кэширование расписания и свободных временных слотов.", $tags="external")
+ContainerQueue_Ext(kafka, "Message Broker", "Apache Kafka", "Асинхронный обмен событиями между сервисами.", $tags="external")
+
+Container_Boundary(appointmentBoundary, "Appointment Service - Go / Gin") {
+    Component(appointmentController, "Appointment Controller", "Gin Controller", "Обрабатывает HTTP-запросы на создание, просмотр, перенос и отмену записей.", $tags="controller")
+    Component(scheduleController, "Schedule Controller", "Gin Controller", "Обрабатывает запросы на просмотр расписания врачей и свободных временных слотов.", $tags="controller")
+    Component(appointmentLogic, "Appointment Logic", "Go Service", "Реализует бизнес-логику создания, изменения и отмены записей на приём.", $tags="business")
+    Component(availabilityService, "Availability Service", "Go Service", "Проверяет доступность врачей и временных слотов, предотвращает пересечение записей.", $tags="business")
+    Component(bookingPolicy, "Booking Policy", "Go Service", "Проверяет бизнес-правила и ограничения при записи на приём.", $tags="business")
+    Component(appointmentRepository, "Appointment Repository", "Go Repository", "Чтение, создание, изменение и удаление записей на приём.", $tags="repository")
+    Component(scheduleRepository, "Schedule Repository", "Go Repository", "Получение расписания врачей и управление временными слотами.", $tags="repository")
+    Component(patientAdapter, "Patient Adapter", "HTTP Client", "Получает информацию о пациентах через Patient Service.", $tags="external")
+    Component(emrAdapter, "EMR Adapter", "HTTP Client", "Обеспечивает взаимодействие с EMR Service.", $tags="external")
+    Component(cacheAdapter, "Cache Adapter", "Redis Client", "Чтение и обновление кэша расписания.", $tags="external")
+    Component(eventPublisher, "Appointment Event Publisher", "Kafka Producer", "Публикует события создания, переноса и отмены записей.", $tags="external")
+}
+
+Rel(gateway, appointmentController, "Запросы управления записями", "HTTP / JSON")
+Rel(gateway, scheduleController, "Запросы расписания", "HTTP / JSON")
+Rel(appointmentController, appointmentLogic, "Передача запросов на управление записями")
+Rel(scheduleController, availabilityService, "Запрос доступных временных слотов")
+Rel(appointmentLogic, availabilityService, "Проверка доступности времени")
+Rel(appointmentLogic, bookingPolicy, "Проверка правил записи")
+Rel(availabilityService, bookingPolicy, "Проверка ограничений расписания")
+Rel(appointmentLogic, appointmentRepository, "Сохранение и получение записей")
+Rel(availabilityService, scheduleRepository, "Получение расписания врачей")
+Rel(availabilityService, appointmentRepository, "Проверка занятости временных слотов")
+Rel(appointmentRepository, appointmentDb, "Чтение и запись записей", "SQL")
+Rel(scheduleRepository, appointmentDb, "Чтение расписания", "SQL")
+Rel(appointmentLogic, patientAdapter, "Проверка данных пациента")
+Rel(patientAdapter, patientService, "Получение данных пациента", "REST / HTTPS / JSON")
+Rel(appointmentLogic, emrAdapter, "Запрос медицинских данных")
+Rel(emrAdapter, emrService, "Получение медицинских данных", "REST / HTTPS / JSON")
+Rel(availabilityService, cacheAdapter, "Получение и обновление кэша расписания")
+Rel(cacheAdapter, redis, "Чтение и запись кэша", "Redis Protocol")
+Rel(appointmentLogic, eventPublisher, "Передача событий о записях")
+Rel(eventPublisher, kafka, "Публикация событий", "Kafka")
+Rel(notificationService, kafka, "Потребление событий для уведомлений", "Kafka")
+
+legend bottom
+    |= Обозначение | Тип |
+    |<#08427B>  Контроллеры (API) | Component |
+    |<#1168BD>  Бизнес-компоненты | Component |
+    |<#F5DA81>  Репозитории | Component |
+    |<#999999>  Адаптеры, внешние сервисы и инфраструктура | Container_Ext / ContainerDb_Ext / ContainerQueue_Ext |
+endlegend
+
+@enduml

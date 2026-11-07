@@ -1,0 +1,81 @@
+@startuml SmartClinic_Containers
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title С4 - Умная поликлиника. Уровень 2
+
+LAYOUT_LEFT_RIGHT()
+
+Person(patient, "Пациент", "Записывается на приём, просматривает медицинскую историю, результаты анализов и оплачивает услуги.")
+Person(doctor, "Врач", "Просматривает расписание, ведёт ЭМК, назначает анализы и направления.")
+Person(admin, "Администратор ресепшена", "Регистрирует пациентов, управляет расписанием и оформляет страховые документы.")
+
+System_Boundary(clinic, "Умная поликлиника - МедЛайф") {
+    Container(web, "Web Application", "React", "Веб-интерфейс для пациентов, врачей и администраторов.")
+    Container(mobile, "Mobile Application", "React Native", "Мобильное приложение пациента для записи, просмотра истории, анализов и оплаты.")
+    Container(gateway, "API Gateway", "Kong", "Единая точка входа API. Маршрутизация запросов, ограничение нагрузки и проверка токенов.")
+    Container(auth, "Auth Service", "Keycloak / OAuth 2.0 / OpenID Connect", "Аутентификация пользователей, выдача JWT-токенов, управление ролями и правами доступа.")
+    Container(patientService, "Patient Service", "Go / Gin", "Регистрация пациентов, управление профилями и персональными данными.")
+    Container(appointment, "Appointment Service", "Go / Gin", "Управление расписанием врачей, записью, отменой и переносом приёмов.")
+    Container(emr, "EMR Service", "Go / Gin", "Ведение электронных медицинских карт, диагнозов, назначений и истории приёмов.")
+    Container(labService, "Laboratory Integration Service", "Go / Gin", "Интеграция с лабораторией КДЛ: передача заказов и получение результатов исследований.")
+    Container(insuranceService, "Insurance Integration Service", "Go / Gin", "Проверка страховых полисов и отправка реестров оказанных услуг в СОГАЗ.")
+    Container(paymentService, "Payment Service", "Go / Gin", "Создание платежей, обработка ответов платёжного шлюза и фиксация статусов транзакций.")
+    Container(notificationService, "Notification Service", "Go / Gin", "Формирование и отправка SMS и Email-уведомлений пациентам.")
+    ContainerDb(patientDb, "Patient Database", "PostgreSQL", "Персональные данные и профили пациентов.")
+    ContainerDb(appointmentDb, "Appointment Database", "PostgreSQL", "Расписание врачей, свободные слоты и записи на приём.")
+    ContainerDb(emrDb, "EMR Database", "PostgreSQL", "Электронные медицинские карты, диагнозы и назначения.")
+    ContainerDb(financeDb, "Finance Database", "PostgreSQL", "Платежи, транзакции и страховые данные.")
+    ContainerQueue(kafka, "Message Broker", "Apache Kafka", "Асинхронный обмен событиями между бизнес-сервисами.")
+    ContainerDb(redis, "Cache", "Redis", "Кэширование расписаний и часто запрашиваемых данных.")
+    Container(storage, "Object Storage", "Yandex Object Storage", "Хранение медицинских документов, сканов и прикреплённых файлов.")
+}
+
+System_Ext(kdl, "Лаборатория КДЛ", "Внешняя лабораторная система. Принимает заказы и передаёт результаты исследований через REST API.")
+System_Ext(sogaz, "Страховая компания СОГАЗ", "Проверка полисов и приём реестров оказанных медицинских услуг.")
+System_Ext(paymed, "Платёжный шлюз PayMed", "Обработка онлайн-платежей и возврат статусов транзакций.")
+System_Ext(sms, "SMS / Email Gateway", "Внешний сервис отправки SMS-сообщений и электронных писем.")
+
+Rel_D(patient, web, "Использует веб-сайт")
+Rel_D(patient, mobile, "Использует мобильное приложение")
+Rel_D(doctor, web, "Работает с расписанием и ЭМК")
+Rel_D(admin, web, "Работает с системой")
+Rel_D(web, gateway, "HTTPS / REST API / JSON")
+Rel_D(mobile, gateway, "HTTPS / REST API / JSON")
+Rel_D(web, auth, "Вход в систему и получение токена", "HTTPS / OIDC")
+Rel_D(mobile, auth, "Вход в систему и получение токена", "HTTPS / OIDC")
+Rel_D(gateway, auth, "Проверка JWT и прав доступа", "HTTPS / OIDC")
+Rel_D(gateway, patientService, "Запросы профилей пациентов", "REST / JSON")
+Rel_D(gateway, appointment, "Запись и управление расписанием", "REST / JSON")
+Rel_D(gateway, emr, "Запросы медицинских карт", "REST / JSON")
+Rel_D(gateway, paymentService, "Запросы на оплату", "REST / JSON")
+Rel_D(gateway, insuranceService, "Запросы проверки полисов", "REST / JSON")
+Rel_D(patientService, patientDb, "Чтение и запись данных пациентов", "SQL")
+Rel_D(appointment, appointmentDb, "Чтение и запись расписания", "SQL")
+Rel_D(emr, emrDb, "Чтение и запись медицинских карт", "SQL")
+Rel_D(paymentService, financeDb, "Сохранение платежей", "SQL")
+Rel_D(insuranceService, financeDb, "Сохранение страховых данных", "SQL")
+Rel_D(appointment, redis, "Кэширование расписания", "Redis Protocol")
+Rel_D(patientService, redis, "Кэширование профилей", "Redis Protocol")
+Rel_D(appointment, kafka, "Событие записи или отмены приёма", "Kafka")
+Rel_D(emr, kafka, "Событие назначения анализа", "Kafka")
+Rel_D(labService, kafka, "Событие получения результатов", "Kafka")
+Rel_D(paymentService, kafka, "Событие изменения статуса платежа", "Kafka")
+Rel_D(kafka, notificationService, "События для отправки уведомлений", "Kafka")
+Rel_D(kafka, emr, "Результаты лабораторных исследований", "Kafka")
+Rel_D(labService, kdl, "Передача заказов на анализы", "REST API / HTTPS / JSON")
+Rel_D(kdl, labService, "Возвращает результаты исследований", "REST API / HTTPS / JSON")
+Rel_D(insuranceService, sogaz, "Проверка полисов и отправка реестров", "REST API / HTTPS / JSON")
+Rel_D(sogaz, insuranceService, "Результаты проверки полисов", "REST API / HTTPS / JSON")
+Rel_D(paymentService, paymed, "Создание платежа", "REST API / HTTPS / JSON")
+Rel_D(paymed, paymentService, "Статус транзакции и результат оплаты", "HTTPS / Webhook")
+Rel_D(notificationService, sms, "Отправка SMS и Email", "REST API / HTTPS")
+Rel_D(emr, storage, "Загрузка и получение медицинских документов", "HTTPS / S3 API")
+
+legend bottom
+    |<#438DD5> Пользовательские приложения|
+    |<#1168BD> Backend-сервисы |
+    |<#999999> Внешние системы и инфраструктура |
+endlegend
+
+@enduml

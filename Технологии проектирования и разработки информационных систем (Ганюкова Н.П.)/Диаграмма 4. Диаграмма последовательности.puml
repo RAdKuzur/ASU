@@ -1,0 +1,74 @@
+
+@startuml SmartClinic_Appointment_Sequence
+
+title C4 - Умная поликлиника Уровень 4. Диаграмма последовательности. Сценарий: запись пациента на приём
+
+autonumber
+
+actor "Пациент" as Patient
+participant "API Gateway" as Gateway
+participant "Appointment Controller" as Controller
+participant "Appointment Service" as Service
+participant "Patient Service Client" as PatientClient
+participant "Patient Service" as PatientService
+participant "Booking Policy" as Policy
+participant "Availability Service" as Availability
+participant "Redis Cache" as Cache
+participant "Appointment Repository" as Repository
+database "Appointment Database" as DB
+participant "Kafka Event Publisher" as Publisher
+queue "Apache Kafka" as Kafka
+
+Patient -> Gateway: POST /appointments
+Gateway -> Controller: CreateAppointment(request)
+
+Controller -> Service: CreateAppointment(request)
+
+Service -> PatientClient: GetPatient(patientID)
+PatientClient -> PatientService: GET /patients/{id}
+PatientService --> PatientClient: PatientInfo
+PatientClient --> Service: PatientInfo
+
+Service -> Policy: ValidatePatient(patientInfo)
+Policy --> Service: Результат проверки
+
+Service -> Availability: CheckAvailability(doctorID, slotID)
+
+Availability -> Cache: Get(slotKey)
+
+alt Слот найден в кэше
+    Cache --> Availability: Данные о слоте
+else Слот отсутствует в кэше
+    Availability -> Repository: GetAvailableSlots(doctorID, date)
+    Repository -> DB: SELECT расписания и записей
+    DB --> Repository: Данные расписания
+    Repository --> Availability: Список слотов
+    Availability -> Cache: Set(slotKey, slots)
+end
+
+Availability --> Service: Результат проверки
+
+alt Слот недоступен
+    Service --> Controller: Ошибка: время занято
+    Controller --> Gateway: HTTP 409 Conflict
+    Gateway --> Patient: Запись невозможна
+else Слот доступен
+    Service -> Policy: ValidateBooking(request)
+    Policy --> Service: Проверка успешна
+
+    Service -> Repository: Create(appointment)
+    Repository -> DB: INSERT appointment
+    DB --> Repository: Запись сохранена
+    Repository --> Service: Appointment
+
+    Service -> Publisher: Publish(AppointmentCreated)
+    Publisher -> Kafka: Publish event
+    Kafka --> Publisher: Подтверждение публикации
+    Publisher --> Service: Успешно
+
+    Service --> Controller: Appointment
+    Controller --> Gateway: HTTP 201 Created
+    Gateway --> Patient: Подтверждение записи
+end
+
+@enduml
